@@ -416,24 +416,7 @@ export default function BusinessMap({
           </div>
         )}
 
-        {/* Biometric OpenCV & Video Briefing Shortcut Button */}
-        {onOpenBiometrics && (
-          <button
-            onClick={onOpenBiometrics}
-            className="map-badge"
-            style={{
-              cursor: "pointer",
-              background: "linear-gradient(135deg, rgba(224,82,82,0.2), rgba(200,130,46,0.25))",
-              border: "1px solid var(--argus-amber)",
-              color: "#ffffff",
-              fontWeight: 700,
-              boxShadow: "0 0 15px rgba(200,130,46,0.25)",
-            }}
-          >
-            <span className="pulse-dot pulse-dot--red" />
-            <span>OpenCV Face Zoom & AI Video (Cam 05)</span>
-          </button>
-        )}
+
 
         {/* Predicted Next Sector Pill */}
         {prediction && (
@@ -628,8 +611,8 @@ export default function BusinessMap({
           )}
         </GoogleMap>
       ) : (
-        /* ── Tactical Radar Canvas Fallback (Always works locally with 0 API restrictions) ── */
-        <div className="relative w-full h-full flex items-center justify-center select-none overflow-hidden bg-[#0a0a0c]">
+        /* ── Tactical Radar Canvas Fallback (Offset on desktop for sidebar) ── */
+        <div className="relative w-full h-full flex items-center justify-center select-none overflow-hidden bg-[#0a0a0c] md:pl-[380px]">
           {/* Cybernetic Grid Lines */}
           <div
             className="absolute inset-0 opacity-20"
@@ -816,7 +799,7 @@ export default function BusinessMap({
           </div>
 
           {/* Tactical HUD Footer */}
-          <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
+          <div className="absolute bottom-6 left-6 md:left-[404px] z-20 flex items-center gap-3">
             <div className="px-3 py-1.5 rounded-lg bg-black/80 border border-[var(--argus-border-subtle)] flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[var(--argus-amber)]" />
               <span className="text-[10px] font-mono text-gray-400">

@@ -98,19 +98,19 @@ export default function OpenCVFaceZoomModal({
               </svg>
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h2 id="biometric-modal-title" className="text-sm sm:text-base font-bold font-mono tracking-wider text-white">
-                  ARGUS BIOMETRIC INTEL // OPENCV FORENSIC ANALYSIS
+              <div className="flex items-center gap-2 flex-wrap">
+                <h2 id="biometric-modal-title" className="text-sm font-bold font-mono tracking-wider text-white">
+                  BIOMETRIC SURVEILLANCE MATRIX
                 </h2>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#e05252]/25 text-[#ff6b6b] border border-[#e05252]/50 animate-pulse">
-                  PRIMARY LOCK: CAM 05 (96.8%)
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-red-500/20 text-red-400 border border-red-500/40 animate-pulse">
+                  LOCK: CAM 05 (96.8%)
                 </span>
                 <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/10 text-emerald-400 border border-white/10">
-                  8 DETECTIONS ACROSS 8 FEEDS
+                  8 DETECTIONS
                 </span>
               </div>
-              <p className="text-xs text-gray-400 font-mono mt-0.5">
-                Target Profile: Male, approx 5&apos;10&quot; &bull; White shirt &bull; Carrying blue laptop &bull; VITS Deshmukhi Grid
+              <p className="text-[11px] text-gray-400 font-mono mt-0.5">
+                Target: Male, ~5&apos;10&quot; &bull; White shirt &bull; Blue laptop &bull; VITS Deshmukhi Grid
               </p>
             </div>
           </div>
@@ -119,10 +119,10 @@ export default function OpenCVFaceZoomModal({
             {!isAnalyzing && (
               <button
                 onClick={runBiometricScan}
-                className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+                className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                 title="Re-run live multi-scale OpenCV scan"
               >
-                <span>⚡ Re-run Live Scan</span>
+                <span>⚡ Re-scan</span>
               </button>
             )}
 
@@ -130,33 +130,33 @@ export default function OpenCVFaceZoomModal({
             <div className="hidden sm:flex bg-[#181a22] p-1 rounded-lg border border-[var(--argus-border-subtle)]">
               <button
                 onClick={() => setActiveTab("faces")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
                   activeTab === "faces"
-                    ? "bg-[var(--argus-amber)] text-black shadow-md"
+                    ? "bg-[var(--argus-amber)] text-black shadow-md font-bold"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                OpenCV Face & Feeds
+                Perimeter Feeds
               </button>
               <button
                 onClick={() => setActiveTab("video")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
                   activeTab === "video"
-                    ? "bg-[var(--argus-amber)] text-black shadow-md"
+                    ? "bg-[var(--argus-amber)] text-black shadow-md font-bold"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                AI Alert Video
+                Alert Broadcast
               </button>
               <button
                 onClick={() => setActiveTab("trajectory")}
-                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all ${
+                className={`px-3 py-1.5 rounded-md text-xs font-mono font-semibold transition-all cursor-pointer ${
                   activeTab === "trajectory"
-                    ? "bg-[var(--argus-amber)] text-black shadow-md"
+                    ? "bg-[var(--argus-amber)] text-black shadow-md font-bold"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
-                Predicted Next Sector
+                Next Sector
               </button>
             </div>
 

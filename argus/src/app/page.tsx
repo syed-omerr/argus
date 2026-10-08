@@ -413,29 +413,29 @@ export default function Home() {
             </div>
           )}
 
-          {/* Biometric OpenCV & Video Shortcut */}
-          <button
-            type="button"
-            id="open-opencv-modal-btn"
-            onClick={() => setShowBiometricModal(true)}
-            className="btn btn-accent btn-full"
-            style={{
-              marginTop: 12,
-              background: "linear-gradient(135deg, rgba(224,82,82,0.25) 0%, rgba(200,130,46,0.35) 100%)",
-              border: "1px solid var(--argus-amber)",
-              color: "#ffffff",
-              fontWeight: 700,
-              boxShadow: "0 0 16px rgba(200,130,46,0.25)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 8,
-              padding: "9px 12px",
-            }}
-          >
-            <span className="pulse-dot pulse-dot--red" />
-            <span>OpenCV Face Zoom & Evidence (Cam 05 Lock)</span>
-          </button>
+          {/* Sleek Tactical Action Bar */}
+          <div className="grid grid-cols-2 gap-2 mt-3">
+            <button
+              type="button"
+              id="open-opencv-modal-btn"
+              onClick={() => setShowBiometricModal(true)}
+              className="px-2.5 py-2 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-red-500/50 hover:bg-zinc-800 text-[11px] font-mono text-zinc-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
+              title="Open 8-Camera Biometric Surveillance Matrix"
+            >
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span className="font-semibold tracking-wide">CCTV Feeds (8)</span>
+            </button>
+            <button
+              type="button"
+              id="assign-agents-quick-btn"
+              onClick={() => setShowAgentModal(true)}
+              className="px-2.5 py-2 rounded-lg bg-zinc-900 border border-zinc-700/80 hover:border-amber-500/50 hover:bg-zinc-800 text-[11px] font-mono text-zinc-200 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
+              title="Open 20-Agent Swarm Orchestrator"
+            >
+              <span className="w-2 h-2 rounded-full bg-amber-400" />
+              <span className="font-semibold tracking-wide">Swarm (20)</span>
+            </button>
+          </div>
         </div>
 
         {/* Body */}
@@ -463,16 +463,11 @@ export default function Home() {
               />
             </div>
 
-            {/* Suspect Notes */}
+            {/* Suspect Profile */}
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="argus-label" htmlFor="suspect-notes" style={{ marginBottom: 0 }}>
-                  Suspect & Stolen Asset Profile
-                </label>
-                <span className="text-[10px] font-mono text-[#ffb380] uppercase tracking-wider">
-                  OpenCV 4.14 Matcher
-                </span>
-              </div>
+              <label className="argus-label" htmlFor="suspect-notes">
+                Target Suspect & Asset Profile
+              </label>
               <textarea
                 id="suspect-notes"
                 className="argus-textarea"
@@ -481,56 +476,6 @@ export default function Home() {
                 value={suspectNotes}
                 onChange={(e) => setSuspectNotes(e.target.value)}
               />
-
-              {/* OpenCV Pattern Match Trigger */}
-              <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 6 }}>
-                <button
-                  type="button"
-                  id="run-opencv-matcher-btn"
-                  disabled={isOpenCvScanning}
-                  onClick={handleRunOpenCvMatcher}
-                  className="w-full py-2 px-3 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all shadow-md active:scale-98"
-                  style={{
-                    background: isOpenCvScanning
-                      ? "rgba(224, 82, 82, 0.35)"
-                      : "linear-gradient(135deg, rgba(224,82,82,0.9) 0%, rgba(200,130,46,0.95) 100%)",
-                    color: "#ffffff",
-                    border: "1px solid rgba(255,255,255,0.25)",
-                    boxShadow: "0 0 16px rgba(224,82,82,0.35)",
-                    cursor: isOpenCvScanning ? "wait" : "pointer",
-                  }}
-                >
-                  {isOpenCvScanning ? (
-                    <>
-                      <span className="w-3 h-3 rounded-full border-2 border-white/40 border-t-white animate-spin" />
-                      <span>OpenCV Scanning Feeds...</span>
-                    </>
-                  ) : (
-                    <>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        <path d="M11 8v6M8 11h6" />
-                      </svg>
-                      <span>Run OpenCV Pattern Match (Suspect & Asset)</span>
-                    </>
-                  )}
-                </button>
-
-                {openCvStatusText && (
-                  <div
-                    className="p-1.5 rounded text-[10px] font-mono flex items-center gap-2"
-                    style={{
-                      background: "rgba(0,0,0,0.75)",
-                      border: "1px solid rgba(224,82,82,0.5)",
-                      color: "#ffc299",
-                    }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff4d4d] animate-ping" />
-                    <span>{openCvStatusText}</span>
-                  </div>
-                )}
-              </div>
             </div>
 
             {/* Last Known Location */}
@@ -852,25 +797,6 @@ export default function Home() {
 
         {/* ── Footer with action buttons ── */}
         <div className="argus-sidebar__footer">
-          <button
-            type="button"
-            className="btn btn-full"
-            id="view-opencv-footer-btn"
-            onClick={() => setShowBiometricModal(true)}
-            style={{
-              background: "rgba(224,82,82,0.15)",
-              border: "1px solid rgba(224,82,82,0.5)",
-              color: "#ffffff",
-              fontWeight: 600,
-              fontSize: "0.75rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 6,
-            }}
-          >
-            <span>🎯 OpenCV Face Zoom & AI Video (Cam 05)</span>
-          </button>
 
           <button
             type="button"
