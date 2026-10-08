@@ -1,0 +1,1254 @@
+/* ============================================================
+   ARGUS Design System — globals.css
+   Intelligence. Precision. Observation.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* --- Color Primitives --- */
+  --argus-black:       #0a0a0a;
+  --argus-near-black:  #111111;
+  --argus-surface:     #161616;
+  --argus-elevated:    #1d1d1d;
+  --argus-border:      #2a2a2a;
+  --argus-border-subtle: #1f1f1f;
+  --argus-white:       #f5f5f7;
+  --argus-white-dim:   #ebebeb;
+
+  /* --- Accent --- */
+  --argus-amber:       #c8822e;
+  --argus-amber-dim:   #9e6420;
+  --argus-amber-muted: rgba(200, 130, 46, 0.12);
+  --argus-amber-glow:  rgba(200, 130, 46, 0.08);
+
+  /* --- Status --- */
+  --argus-alert:       #e05252;
+  --argus-alert-dim:   rgba(224, 82, 82, 0.15);
+  --argus-success:     #4caf7d;
+  --argus-success-dim: rgba(76, 175, 125, 0.12);
+  --argus-caution:     #c8822e;
+  --argus-info:        #5b8dee;
+  --argus-info-dim:    rgba(91, 141, 238, 0.12);
+
+  /* --- Text --- */
+  --text-primary:      #f5f5f7;
+  --text-secondary:    #a0a0a5;
+  --text-tertiary:     #636366;
+  --text-disabled:     #3a3a3c;
+
+  /* --- Semantic backgrounds --- */
+  --bg-page:           var(--argus-black);
+  --bg-surface:        var(--argus-surface);
+  --bg-elevated:       var(--argus-elevated);
+  --bg-overlay:        rgba(0, 0, 0, 0.72);
+
+  /* --- Typography --- */
+  --font-sans:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:         'IBM Plex Mono', 'SF Mono', 'Fira Mono', monospace;
+
+  /* --- Spacing scale (8px base) --- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* --- Radii --- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.7);
+
+  /* --- Transitions --- */
+  --transition-fast:    120ms ease;
+  --transition-normal:  200ms ease;
+  --transition-slow:    300ms ease;
+}
+
+/* ============================================================
+   BASE RESET + BODY
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* ============================================================
+   ARGUS SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--argus-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* ============================================================
+   TYPOGRAPHY SYSTEM
+   ============================================================ */
+
+.text-display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.text-h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.text-h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.text-h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.text-body {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.text-caption {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* ============================================================
+   ARGUS LOGO MARK — inline SVG approach
+   ============================================================ */
+
+.argus-logotype {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.argus-logotype__wordmark {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   FORM CONTROLS
+   ============================================================ */
+
+.argus-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+
+.argus-input,
+.argus-textarea {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 10px 14px;
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.argus-input::placeholder,
+.argus-textarea::placeholder {
+  color: var(--text-disabled);
+  font-size: 0.8125rem;
+}
+
+.argus-input:hover,
+.argus-textarea:hover {
+  border-color: #3a3a3a;
+}
+
+.argus-input:focus,
+.argus-textarea:focus {
+  border-color: var(--argus-amber);
+  background: #1a1a1a;
+  box-shadow: 0 0 0 3px var(--argus-amber-muted);
+}
+
+.argus-textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+/* Range input */
+.argus-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--argus-border);
+  border-radius: var(--radius-full);
+  outline: none;
+}
+
+.argus-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--argus-amber);
+  cursor: pointer;
+  border: 2px solid var(--argus-surface);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.argus-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 4px var(--argus-amber-muted);
+}
+
+/* ============================================================
+   BUTTON SYSTEM
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--argus-amber);
+  outline-offset: 2px;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Primary button */
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--argus-black);
+  padding: 10px 18px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--argus-white-dim);
+}
+
+/* Accent button (amber) */
+.btn-accent {
+  background: var(--argus-amber);
+  color: var(--argus-black);
+  padding: 10px 18px;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background: #d98e36;
+}
+
+/* Ghost button */
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--argus-border);
+  padding: 9px 18px;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--argus-elevated);
+  color: var(--text-primary);
+  border-color: #3a3a3a;
+}
+
+/* Destructive */
+.btn-destructive {
+  background: transparent;
+  color: var(--argus-alert);
+  border: 1px solid rgba(224, 82, 82, 0.3);
+  padding: 9px 18px;
+}
+
+.btn-destructive:hover:not(:disabled) {
+  background: var(--argus-alert-dim);
+}
+
+/* Icon-only button */
+.btn-icon {
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  color: var(--text-tertiary);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-md);
+}
+
+.btn-icon:hover:not(:disabled) {
+  background: var(--argus-elevated);
+  color: var(--text-secondary);
+}
+
+/* Full-width modifier */
+.btn-full {
+  width: 100%;
+}
+
+/* Loading state */
+.btn-loading {
+  pointer-events: none;
+}
+
+/* ============================================================
+   CARD / SURFACE
+   ============================================================ */
+
+.argus-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.argus-card-elevated {
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.badge-alert {
+  background: var(--argus-alert-dim);
+  color: var(--argus-alert);
+  border: 1px solid rgba(224, 82, 82, 0.25);
+}
+
+.badge-success {
+  background: var(--argus-success-dim);
+  color: var(--argus-success);
+  border: 1px solid rgba(76, 175, 125, 0.25);
+}
+
+.badge-info {
+  background: var(--argus-info-dim);
+  color: var(--argus-info);
+  border: 1px solid rgba(91, 141, 238, 0.25);
+}
+
+.badge-amber {
+  background: var(--argus-amber-muted);
+  color: var(--argus-amber);
+  border: 1px solid rgba(200, 130, 46, 0.25);
+}
+
+.badge-neutral {
+  background: var(--argus-elevated);
+  color: var(--text-tertiary);
+  border: 1px solid var(--argus-border);
+}
+
+/* ============================================================
+   PULSE INDICATOR
+   ============================================================ */
+
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.pulse-dot--alert  { background: var(--argus-alert); }
+.pulse-dot--amber  { background: var(--argus-amber); }
+.pulse-dot--green  { background: var(--argus-success); }
+
+/* ============================================================
+   LOCATION CARD (sidebar list item)
+   ============================================================ */
+
+.location-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--argus-border-subtle);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.location-card:hover {
+  background: var(--bg-elevated);
+  border-color: var(--argus-border);
+}
+
+.location-card.selected {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.location-card__cam-id {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.location-card.selected .location-card__cam-id {
+  background: var(--argus-amber-muted);
+  border-color: var(--argus-amber);
+  color: var(--argus-amber);
+}
+
+.location-card__thumb {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border);
+}
+
+.location-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.location-card__name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location-card__address {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+.location-card__distance {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   MODAL OVERLAY
+   ============================================================ */
+
+.argus-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fade-in var(--transition-normal) ease;
+}
+
+.argus-modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modal-enter var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.argus-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--argus-border-subtle);
+  flex-shrink: 0;
+}
+
+.argus-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.argus-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--argus-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TASK SELECTION CARD
+   ============================================================ */
+
+.task-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.task-card:hover {
+  border-color: #3a3a3a;
+  transform: translateY(-1px);
+}
+
+.task-card.active {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.task-card__check {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--argus-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.task-card.active .task-card__check {
+  background: var(--argus-amber);
+  border-color: var(--argus-amber);
+}
+
+/* ============================================================
+   TIMELINE PANEL
+   ============================================================ */
+
+.timeline-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.timeline-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--argus-border-subtle);
+  flex-shrink: 0;
+}
+
+.timeline-panel__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 36px;
+  width: 1px;
+  height: calc(100% + 8px);
+  background: var(--argus-border);
+}
+
+.timeline-item__avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--argus-border);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-item__content {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 16px;
+}
+
+.timeline-item__name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.timeline-item__time {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--argus-info);
+  margin-bottom: 6px;
+}
+
+.timeline-item__desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+/* ============================================================
+   PROCESSING LOADER
+   ============================================================ */
+
+.agent-loader {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.agent-loader__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--argus-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================================
+   MAP COUNTER BADGES (floating over map)
+   ============================================================ */
+
+.map-badge {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+}
+
+.map-badge__value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.map-badge__label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.argus-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 380px;
+  background: rgba(10, 10, 10, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--argus-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.argus-sidebar__header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--argus-border-subtle);
+  flex-shrink: 0;
+}
+
+.argus-sidebar__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.argus-sidebar__footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--argus-border-subtle);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ============================================================
+   SECTION HEADING
+   ============================================================ */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+}
+
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--argus-border-subtle);
+}
+
+/* ============================================================
+   GEOCODED ADDRESS CHIP
+   ============================================================ */
+
+.geo-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--argus-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   CHECKBOX TOGGLE (platform selection)
+   ============================================================ */
+
+.argus-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--argus-border-subtle);
+  background: var(--bg-elevated);
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.argus-checkbox:hover {
+  border-color: var(--argus-border);
+}
+
+.argus-checkbox.checked {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.argus-checkbox__box {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1.5px solid var(--argus-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.argus-checkbox.checked .argus-checkbox__box {
+  background: var(--argus-amber);
+  border-color: var(--argus-amber);
+}
+
+/* ============================================================
+   RADIO BUTTON
+   ============================================================ */
+
+.argus-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--argus-border-subtle);
+  background: var(--bg-elevated);
+  transition: all var(--transition-fast);
+  flex: 1;
+}
+
+.argus-radio:hover {
+  border-color: var(--argus-border);
+}
+
+.argus-radio.selected {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.argus-radio__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--argus-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.argus-radio.selected .argus-radio__dot {
+  border-color: var(--argus-amber);
+}
+
+.argus-radio.selected .argus-radio__dot::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--argus-amber);
+}
+
+/* ============================================================
+   VIDEO GRID (swarm loader)
+   ============================================================ */
+
+.video-cell {
+  background: var(--argus-black);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.video-cell__progress-ring {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 16px;
+  gap: 10px;
+}
+
+.empty-state__icon {
+  color: var(--text-disabled);
+  margin-bottom: 4px;
+}
+
+.empty-state__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.empty-state__desc {
+  font-size: 0.75rem;
+  color: var(--text-disabled);
+  line-height: 1.5;
+  max-width: 220px;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* Respects reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   DETECTION CARD (on map)
+   ============================================================ */
+
+.detection-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--argus-border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  width: 260px;
+  box-shadow: var(--shadow-lg);
+}
+
+.detection-card__confidence {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   CHAT INTERFACE
+   ============================================================ */
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 9px 13px;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.chat-bubble--user {
+  background: var(--argus-amber);
+  color: var(--argus-black);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.chat-bubble--assistant {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--argus-border-subtle);
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.divider {
+  height: 1px;
+  background: var(--argus-border-subtle);
+}
+
+.truncate-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Platform selection grid */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--argus-border);
+  background: var(--bg-elevated);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.platform-card:hover {
+  border-color: #3a3a3a;
+}
+
+.platform-card.selected {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.platform-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.platform-card__name {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* File upload drop zone */
+.upload-zone {
+  border: 1.5px dashed var(--argus-border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--bg-elevated);
+}
+
+.upload-zone:hover {
+  border-color: var(--argus-amber);
+  background: var(--argus-amber-glow);
+}
+
+.upload-zone.has-files {
+  border-color: var(--argus-success);
+  border-style: solid;
+  background: var(--argus-success-dim);
+}

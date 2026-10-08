@@ -1,0 +1,251 @@
+{
+  "query": "Male, approx 5'10, dark jacket, carrying blue laptop",
+  "parsedAttributes": {
+    "target_person": "male",
+    "target_height": "5'10\"",
+    "target_apparel": "dark jacket",
+    "target_asset": "blue laptop",
+    "raw_query": "Male, approx 5'10, dark jacket, carrying blue laptop"
+  },
+  "totalCameras": 11,
+  "positiveHitsCount": 1,
+  "confirmedHitCamera": "cam 05.mp4",
+  "results": [
+    {
+      "cameraFile": "cam 01.mp4",
+      "cameraKey": "cam_01",
+      "cameraName": "CAM_01 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_01.jpg",
+      "fullImage": "/faces/full_cam_01.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 03.mp4",
+      "cameraKey": "cam_03",
+      "cameraName": "CAM_03 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_03.jpg",
+      "fullImage": "/faces/full_cam_03.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 04.mp4",
+      "cameraKey": "cam_04",
+      "cameraName": "CAM_04 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_04.jpg",
+      "fullImage": "/faces/full_cam_04.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 05.mp4",
+      "cameraKey": "cam_05",
+      "cameraName": "C5: Central Library & Computer Labs (Stairwell)",
+      "location": {
+        "lat": 17.3667,
+        "lng": 78.7583
+      },
+      "isPositiveHit": true,
+      "confidence": 0.96,
+      "timestamp": "14:11:05 IST",
+      "statusText": "CONFIRMED HIT: Culprit Face & Blue Laptop Lock",
+      "details": {
+        "frame_idx": 432,
+        "person_conf": 0.94,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Blue Laptop",
+        "clothing_match": "Dark Jacket / Top",
+        "movement_vector": "Stairwell Descending -> Ground Level Exit"
+      },
+      "zoomImage": "/faces/zoom_cam_05.jpg",
+      "fullImage": "/faces/full_cam_05.jpg",
+      "laptopImage": "/faces/cam_05_laptop_zoom.jpg",
+      "personImage": "/faces/cam_05_person_crop.jpg"
+    },
+    {
+      "cameraFile": "cam 06.mp4",
+      "cameraKey": "cam_06",
+      "cameraName": "CAM_06 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_06.jpg",
+      "fullImage": "/faces/full_cam_06.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 08.mp4",
+      "cameraKey": "cam_08",
+      "cameraName": "CAM_08 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_08.jpg",
+      "fullImage": "/faces/full_cam_08.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 09.mp4",
+      "cameraKey": "cam_09",
+      "cameraName": "CAM_09 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_09.jpg",
+      "fullImage": "/faces/full_cam_09.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 10.mp4",
+      "cameraKey": "cam_10",
+      "cameraName": "CAM_10 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_10.jpg",
+      "fullImage": "/faces/full_cam_10.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 11.mp4",
+      "cameraKey": "cam_11",
+      "cameraName": "CAM_11 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_11.jpg",
+      "fullImage": "/faces/full_cam_11.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 12.mp4",
+      "cameraKey": "cam_12",
+      "cameraName": "CAM_12 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_12.jpg",
+      "fullImage": "/faces/full_cam_12.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 2.mp4",
+      "cameraKey": "cam_2",
+      "cameraName": "CAM_2 Perimeter Feed",
+      "location": {
+        "lat": 17.3702,
+        "lng": 78.7569
+      },
+      "isPositiveHit": false,
+      "confidence": 0.0,
+      "timestamp": "14:02:15 IST",
+      "statusText": "FEED CLEAR (0 MATCHES)",
+      "details": {
+        "status": "No matching individual or blue laptop detected in feed.",
+        "opencv_verdict": "CLEAR"
+      },
+      "zoomImage": "/faces/zoom_cam_2.jpg",
+      "fullImage": "/faces/full_cam_2.jpg",
+      "laptopImage": null,
+      "personImage": null
+    }
+  ]
+}
