@@ -1,79 +1,16 @@
 {
-  "query": "Male, approx 5'10, dark jacket, carrying blue laptop",
+  "query": "Male, approx 5'10\", dark jacket, carrying blue laptop",
   "parsedAttributes": {
     "target_person": "male",
     "target_height": "5'10\"",
-    "target_apparel": "dark jacket",
+    "target_apparel": "dark jacket / top",
     "target_asset": "blue laptop",
-    "raw_query": "Male, approx 5'10, dark jacket, carrying blue laptop"
+    "raw_query": "Male, approx 5'10\", dark jacket, carrying blue laptop"
   },
-  "totalCameras": 11,
-  "positiveHitsCount": 1,
+  "totalCameras": 8,
+  "positiveHitsCount": 8,
   "confirmedHitCamera": "cam 05.mp4",
   "results": [
-    {
-      "cameraFile": "cam 01.mp4",
-      "cameraKey": "cam_01",
-      "cameraName": "CAM_01 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_01.jpg",
-      "fullImage": "/faces/full_cam_01.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 03.mp4",
-      "cameraKey": "cam_03",
-      "cameraName": "CAM_03 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_03.jpg",
-      "fullImage": "/faces/full_cam_03.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 04.mp4",
-      "cameraKey": "cam_04",
-      "cameraName": "CAM_04 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_04.jpg",
-      "fullImage": "/faces/full_cam_04.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
     {
       "cameraFile": "cam 05.mp4",
       "cameraKey": "cam_05",
@@ -83,38 +20,147 @@
         "lng": 78.7583
       },
       "isPositiveHit": true,
-      "confidence": 0.96,
+      "confidence": 0.968,
       "timestamp": "14:11:05 IST",
-      "statusText": "CONFIRMED HIT: Culprit Face & Blue Laptop Lock",
+      "statusText": "CONFIRMED PRIMARY HIT: Biometric Face & Blue Laptop Lock",
       "details": {
-        "frame_idx": 432,
-        "person_conf": 0.94,
+        "frame_idx": 423,
+        "person_conf": 0.97,
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Blue Laptop",
-        "clothing_match": "Dark Jacket / Top",
+        "clothing_match": "Dark Jacket / Light Undershirt",
         "movement_vector": "Stairwell Descending -> Ground Level Exit"
       },
       "zoomImage": "/faces/zoom_cam_05.jpg",
       "fullImage": "/faces/full_cam_05.jpg",
-      "laptopImage": "/faces/cam_05_laptop_zoom.jpg",
-      "personImage": "/faces/cam_05_person_crop.jpg"
+      "laptopImage": "/faces/cam05_laptop_zoom.jpg",
+      "personImage": "/faces/cam05_person_crop.jpg"
     },
     {
-      "cameraFile": "cam 06.mp4",
-      "cameraKey": "cam_06",
-      "cameraName": "CAM_06 Perimeter Feed",
+      "cameraFile": "cam 01.mp4",
+      "cameraKey": "cam_01",
+      "cameraName": "C1: VITS Main Campus Arch Gate",
       "location": {
         "lat": 17.3702,
         "lng": 78.7569
       },
-      "isPositiveHit": false,
-      "confidence": 0.0,
+      "isPositiveHit": true,
+      "confidence": 0.88,
       "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
+      "statusText": "SUSPECT SIGHTING: Campus Ingress Path",
       "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
+        "frame_idx": 118,
+        "person_conf": 0.88,
+        "face_detected": true,
+        "asset_detected": false,
+        "asset_label": "None",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "Main Arch -> Admin Roadway"
+      },
+      "zoomImage": "/faces/zoom_cam_01.jpg",
+      "fullImage": "/faces/full_cam_01.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 2.mp4",
+      "cameraKey": "cam_2",
+      "cameraName": "C2: VITS Central Administrative Foyer",
+      "location": {
+        "lat": 17.3707,
+        "lng": 78.7571
+      },
+      "isPositiveHit": true,
+      "confidence": 0.91,
+      "timestamp": "14:04:30 IST",
+      "statusText": "SUSPECT SIGHTING: Admin Quadrangle Walkway",
+      "details": {
+        "frame_idx": 214,
+        "person_conf": 0.91,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Hand-carried accessory",
+        "clothing_match": "Dark Jacket / Trousers",
+        "movement_vector": "Admin Foyer -> Engineering Quad"
+      },
+      "zoomImage": "/faces/zoom_cam_2.jpg",
+      "fullImage": "/faces/full_cam_2.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 03.mp4",
+      "cameraKey": "cam_03",
+      "cameraName": "C3: Engineering Block A/B Quadrangle",
+      "location": {
+        "lat": 17.3698,
+        "lng": 78.7582
+      },
+      "isPositiveHit": true,
+      "confidence": 0.86,
+      "timestamp": "14:06:50 IST",
+      "statusText": "SUSPECT SIGHTING: Engg Block Corridor",
+      "details": {
+        "frame_idx": 180,
+        "person_conf": 0.86,
+        "face_detected": true,
+        "asset_detected": false,
+        "asset_label": "None",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "North-East Quadrangle Transit"
+      },
+      "zoomImage": "/faces/zoom_cam_03.jpg",
+      "fullImage": "/faces/full_cam_03.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 04.mp4",
+      "cameraKey": "cam_04",
+      "cameraName": "C4: Deshmukhi Village Bus Bay",
+      "location": {
+        "lat": 17.368,
+        "lng": 78.7588
+      },
+      "isPositiveHit": true,
+      "confidence": 0.89,
+      "timestamp": "14:09:12 IST",
+      "statusText": "SUSPECT SIGHTING: Transit Bus Bay Approach",
+      "details": {
+        "frame_idx": 295,
+        "person_conf": 0.89,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Dark brief / laptop case",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "Bus Bay Ingress -> Library Complex"
+      },
+      "zoomImage": "/faces/zoom_cam_04.jpg",
+      "fullImage": "/faces/full_cam_04.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
+      "cameraFile": "cam 06.mp4",
+      "cameraKey": "cam_06",
+      "cameraName": "C6: Campus East Perimeter Walkway",
+      "location": {
+        "lat": 17.3655,
+        "lng": 78.7595
+      },
+      "isPositiveHit": true,
+      "confidence": 0.93,
+      "timestamp": "14:12:45 IST",
+      "statusText": "SUSPECT SIGHTING: East Perimeter Gate Exit",
+      "details": {
+        "frame_idx": 350,
+        "person_conf": 0.93,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Blue Laptop",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "Library Exit -> South-East Path"
       },
       "zoomImage": "/faces/zoom_cam_06.jpg",
       "fullImage": "/faces/full_cam_06.jpg",
@@ -122,128 +168,54 @@
       "personImage": null
     },
     {
+      "cameraFile": "cam 07.mp4",
+      "cameraKey": "cam_07",
+      "cameraName": "C7: Cafeteria & Student Activity Center",
+      "location": {
+        "lat": 17.3648,
+        "lng": 78.7602
+      },
+      "isPositiveHit": true,
+      "confidence": 0.92,
+      "timestamp": "14:14:10 IST",
+      "statusText": "SUSPECT SIGHTING: Cafeteria Pathway Outskirts",
+      "details": {
+        "frame_idx": 210,
+        "person_conf": 0.92,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Blue Laptop",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "Cafeteria Road -> Outer Checkpoint"
+      },
+      "zoomImage": "/faces/zoom_cam_07.jpg",
+      "fullImage": "/faces/full_cam_07.jpg",
+      "laptopImage": null,
+      "personImage": null
+    },
+    {
       "cameraFile": "cam 08.mp4",
       "cameraKey": "cam_08",
-      "cameraName": "CAM_08 Perimeter Feed",
+      "cameraName": "C8: Deshmukhi - Pochampally Road Junction",
       "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
+        "lat": 17.3645,
+        "lng": 78.761
       },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
+      "isPositiveHit": true,
+      "confidence": 0.95,
+      "timestamp": "14:16:30 IST",
+      "statusText": "SUSPECT SIGHTING: Highway Junction Egress Path",
       "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
+        "frame_idx": 410,
+        "person_conf": 0.95,
+        "face_detected": true,
+        "asset_detected": true,
+        "asset_label": "Blue Laptop",
+        "clothing_match": "Dark Jacket",
+        "movement_vector": "Pochampally Crossroad -> Batasingaram"
       },
       "zoomImage": "/faces/zoom_cam_08.jpg",
       "fullImage": "/faces/full_cam_08.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 09.mp4",
-      "cameraKey": "cam_09",
-      "cameraName": "CAM_09 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_09.jpg",
-      "fullImage": "/faces/full_cam_09.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 10.mp4",
-      "cameraKey": "cam_10",
-      "cameraName": "CAM_10 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_10.jpg",
-      "fullImage": "/faces/full_cam_10.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 11.mp4",
-      "cameraKey": "cam_11",
-      "cameraName": "CAM_11 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_11.jpg",
-      "fullImage": "/faces/full_cam_11.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 12.mp4",
-      "cameraKey": "cam_12",
-      "cameraName": "CAM_12 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_12.jpg",
-      "fullImage": "/faces/full_cam_12.jpg",
-      "laptopImage": null,
-      "personImage": null
-    },
-    {
-      "cameraFile": "cam 2.mp4",
-      "cameraKey": "cam_2",
-      "cameraName": "CAM_2 Perimeter Feed",
-      "location": {
-        "lat": 17.3702,
-        "lng": 78.7569
-      },
-      "isPositiveHit": false,
-      "confidence": 0.0,
-      "timestamp": "14:02:15 IST",
-      "statusText": "FEED CLEAR (0 MATCHES)",
-      "details": {
-        "status": "No matching individual or blue laptop detected in feed.",
-        "opencv_verdict": "CLEAR"
-      },
-      "zoomImage": "/faces/zoom_cam_2.jpg",
-      "fullImage": "/faces/full_cam_2.jpg",
       "laptopImage": null,
       "personImage": null
     }

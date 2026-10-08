@@ -212,7 +212,7 @@ IMPORTANT: Only use the exact suspect description provided. Do not add any addit
                       ? "/faces/zoom_cam_05.jpg"
                       : (r.frame || `/faces/zoom_${r.videoName.toLowerCase().replace(/ /g, "_")}.jpg`),
                     description: (r.videoName.toLowerCase().includes("c5") || r.cameraId.toLowerCase().includes("c5"))
-                      ? "OpenCV Biometric Face & Blue Laptop Lock (96.4%)"
+                      ? "OpenCV Biometric Face & Blue Laptop Lock (96.8%)"
                       : "Perimeter Camera Scan (Feed Clear)",
                     confidence: r.confidence,
                     timestamp: r.timestamp || "14:11:05 IST",

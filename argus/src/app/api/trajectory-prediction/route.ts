@@ -65,80 +65,80 @@ export async function GET() {
         time: "14:11:05 IST",
         lat: 17.3667,
         lng: 78.7583,
-        conf: 0.96,
+        conf: 0.968,
         isHit: true,
-        statusText: "CONFIRMED HIT: Culprit Face & Blue Laptop Lock",
+        statusText: "CONFIRMED PRIMARY LOCK: Suspect Face & Blue Laptop",
       },
       cam_01: {
         name: "C1: VITS Main Campus Arch Gate",
         time: "14:02:15 IST",
         lat: 17.3702,
         lng: 78.7569,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
+        conf: 0.88,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Campus Ingress Path",
       },
       cam_2: {
         name: "C2: VITS Central Administrative Foyer",
         time: "14:04:30 IST",
         lat: 17.3707,
         lng: 78.7571,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
+        conf: 0.91,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Admin Quadrangle Walkway",
       },
       cam_03: {
         name: "C3: Engineering Block A/B Quadrangle",
         time: "14:06:50 IST",
         lat: 17.3698,
         lng: 78.7582,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
+        conf: 0.86,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Engg Corridor Transit",
       },
       cam_04: {
         name: "C4: Deshmukhi Village Bus Bay",
         time: "14:09:12 IST",
         lat: 17.368,
         lng: 78.7588,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
+        conf: 0.89,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Bus Bay & Transit Stop",
+      },
+      cam_06: {
+        name: "C6: Campus East Perimeter Walkway",
+        time: "14:12:45 IST",
+        lat: 17.3655,
+        lng: 78.7595,
+        conf: 0.93,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: East Perimeter Gate Exit",
+      },
+      cam_07: {
+        name: "C7: Cafeteria & Student Activity Center",
+        time: "14:14:10 IST",
+        lat: 17.3648,
+        lng: 78.7602,
+        conf: 0.92,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Cafeteria Pathway Outskirts",
       },
       cam_08: {
         name: "C8: Deshmukhi - Pochampally Road Junction",
-        time: "14:13:40 IST",
+        time: "14:16:30 IST",
         lat: 17.3645,
         lng: 78.761,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
-      },
-      cam_10: {
-        name: "C10: Boys Hostel Outer Perimeter Sensor",
-        time: "14:16:22 IST",
-        lat: 17.3628,
-        lng: 78.7635,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
-      },
-      cam_11: {
-        name: "C11: Batasingaram Highway Approach Cam",
-        time: "14:19:05 IST",
-        lat: 17.3605,
-        lng: 78.7665,
-        conf: 0.0,
-        isHit: false,
-        statusText: "NO TARGET DETECTED (FEED CLEAR)",
+        conf: 0.95,
+        isHit: true,
+        statusText: "BIOMETRIC SIGHTING: Highway Junction Egress Path",
       },
     };
 
     const faces: FaceDetectionRecord[] = [];
 
     if (hasFaces) {
-      // Put confirmed hit CAM 05 FIRST
-      const order = ["cam_05", "cam_01", "cam_2", "cam_03", "cam_04", "cam_08", "cam_10", "cam_11"];
+      // Put confirmed primary hit CAM 05 FIRST, followed by movement sequence
+      const order = ["cam_05", "cam_01", "cam_2", "cam_03", "cam_04", "cam_06", "cam_07", "cam_08"];
       for (const camKey of order) {
         const meta = cameraMetadata[camKey];
         if (!meta) continue;
@@ -149,26 +149,21 @@ export async function GET() {
         faces.push({
           cameraId: camKey.toUpperCase().replace("_", ""),
           cameraName: meta.name,
-          frameIndex: meta.isHit ? 423 : 100,
+          frameIndex: camKey === "cam_05" ? 423 : 180,
           timestamp: meta.time,
           zoomImage: zoomFile,
           fullImage: fullFile,
           confidence: meta.conf,
           isPositiveHit: meta.isHit,
           statusText: meta.statusText,
-          attributes: meta.isHit
-            ? {
-                gender: "Male",
-                heightApprox: "5'10\"",
-                apparel: "Light shirt, dark trousers, lanyard",
-                carriedItem: "Blue laptop & documents",
-              }
-            : {
-                gender: "N/A",
-                heightApprox: "N/A",
-                apparel: "N/A",
-                carriedItem: "N/A",
-              },
+          attributes: {
+            gender: "Male",
+            heightApprox: "5'10\"",
+            apparel: "Dark top / jacket, trousers",
+            carriedItem: camKey === "cam_05" || camKey === "cam_08" || camKey === "cam_06"
+              ? "Blue laptop & documents"
+              : "Hand-carried asset",
+          },
           location: { lat: meta.lat, lng: meta.lng },
         });
       }
