@@ -177,7 +177,7 @@ def initialize_24_agent_swarm() -> List[OpenAIAgent]:
         OpenAIAgent("Agent-07-FacialReticle", "OpenCV Facial Landmark Extractor", "Biometric Forensics", "Executes 68-point facial mesh alignment using OpenCV 4.14 Lanczos-4 upscaling.", tools=s2_tools_bio),
         OpenAIAgent("Agent-08-LaptopAssetLock", "Stolen Asset Tracker", "Biometric Forensics", "Identifies hand-carried blue laptop asset across occluded camera frames.", tools=s2_tools_asset),
         OpenAIAgent("Agent-09-GaitBiometrics", "Gait & Stride Cadence Analyst", "Biometric Forensics", "Measures pedestrian step frequency and gait acceleration curves.", tools=s2_tools_bio),
-        OpenAIAgent("Agent-10-ApparelProfiler", "Chrominance & Attire Classifier", "Biometric Forensics", "Validates dark jacket and light undershirt color histogram match.", tools=s2_tools_asset),
+        OpenAIAgent("Agent-10-ApparelProfiler", "Chrominance & Attire Classifier", "Biometric Forensics", "Validates white shirt color histogram match.", tools=s2_tools_asset),
         OpenAIAgent("Agent-11-SuperResolution", "Lanczos-4 Bicubic Enhancer", "Biometric Forensics", "Upscales low-bitrate CCTV crops prior to neural feature extraction.", tools=s2_tools_bio),
         OpenAIAgent("Agent-12-FalsePositiveRejector", "Biometric Anomaly Filter", "Biometric Forensics", "Prunes low-confidence candidates (threshold alpha < 0.85).", tools=s2_tools_bio),
     ]
@@ -223,7 +223,7 @@ class OpenAISwarmOrchestrator:
         self.semaphore = asyncio.Semaphore(8) # Max concurrent agent invocations
         self.shared_memory: Dict[str, Any] = {
             "incident_id": "ARGUS-INC-2026-0423",
-            "target_profile": "Male, ~5'10\", dark jacket, blue laptop",
+            "target_profile": "Male, ~5'10\", white shirt, blue laptop",
             "primary_hit_camera": "CAM_05",
             "confidence_threshold": 0.85,
         }

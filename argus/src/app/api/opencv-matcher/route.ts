@@ -23,7 +23,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json().catch(() => ({}));
-    const query = body.query || "Male, approx 5'10\", dark jacket, carrying blue laptop";
+    const query = body.query || "Male, approx 5'10\", white shirt, carrying blue laptop";
 
     console.log(`[*] Executing OpenCV Pattern Matcher with query: "${query}"`);
 

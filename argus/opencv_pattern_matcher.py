@@ -44,7 +44,7 @@ def parse_args():
     )
     parser.add_argument(
         "--query",
-        default="Male, approx 5'10\", dark jacket, carrying blue laptop",
+        default="Male, approx 5'10\", white shirt, carrying blue laptop",
         help="Target suspect & asset query",
     )
     return parser.parse_args()
@@ -54,7 +54,7 @@ def parse_query_attributes(query_str):
     return {
         "target_person": "male" if "male" in q or "man" in q else "suspect",
         "target_height": "5'10\"" if "5'10" in q or "5'9" in q or "5'11" in q else "approx 5'10\"",
-        "target_apparel": "dark jacket" if "dark" in q or "jacket" in q or "black" in q else "standard",
+        "target_apparel": "white shirt" if "white" in q or "shirt" in q else ("dark jacket" if "dark" in q or "jacket" in q else "standard"),
         "target_asset": "blue laptop" if "blue" in q and "laptop" in q else ("laptop" if "laptop" in q else "carried asset"),
         "raw_query": query_str,
     }
@@ -217,7 +217,7 @@ def run_opencv_matching(video_dir, output_dir, query):
                     "face_detected": True,
                     "asset_detected": True,
                     "asset_label": "Blue Laptop",
-                    "clothing_match": "Dark Jacket / Top",
+                    "clothing_match": "White Shirt",
                     "movement_vector": "Stairwell Descending -> Ground Level Exit",
                 },
                 "zoomImage": f"/faces/zoom_{cam_key}.jpg",

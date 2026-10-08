@@ -1,11 +1,11 @@
 {
-  "query": "Male, approx 5'10\", dark jacket, carrying blue laptop",
+  "query": "Male, approx 5'10\", white shirt, carrying blue laptop",
   "parsedAttributes": {
     "target_person": "male",
     "target_height": "5'10\"",
-    "target_apparel": "dark jacket / top",
+    "target_apparel": "white shirt",
     "target_asset": "blue laptop",
-    "raw_query": "Male, approx 5'10\", dark jacket, carrying blue laptop"
+    "raw_query": "Male, approx 5'10\", white shirt, carrying blue laptop"
   },
   "totalCameras": 8,
   "positiveHitsCount": 8,
@@ -29,7 +29,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Blue Laptop",
-        "clothing_match": "Dark Jacket / Light Undershirt",
+        "clothing_match": "White Shirt",
         "movement_vector": "Stairwell Descending -> Ground Level Exit"
       },
       "zoomImage": "/faces/zoom_cam_05.jpg",
@@ -55,7 +55,7 @@
         "face_detected": true,
         "asset_detected": false,
         "asset_label": "None",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "Main Arch -> Admin Roadway"
       },
       "zoomImage": "/faces/zoom_cam_01.jpg",
@@ -81,7 +81,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Hand-carried accessory",
-        "clothing_match": "Dark Jacket / Trousers",
+        "clothing_match": "White Shirt",
         "movement_vector": "Admin Foyer -> Engineering Quad"
       },
       "zoomImage": "/faces/zoom_cam_2.jpg",
@@ -107,7 +107,7 @@
         "face_detected": true,
         "asset_detected": false,
         "asset_label": "None",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "North-East Quadrangle Transit"
       },
       "zoomImage": "/faces/zoom_cam_03.jpg",
@@ -133,7 +133,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Dark brief / laptop case",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "Bus Bay Ingress -> Library Complex"
       },
       "zoomImage": "/faces/zoom_cam_04.jpg",
@@ -159,7 +159,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Blue Laptop",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "Library Exit -> South-East Path"
       },
       "zoomImage": "/faces/zoom_cam_06.jpg",
@@ -185,7 +185,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Blue Laptop",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "Cafeteria Road -> Outer Checkpoint"
       },
       "zoomImage": "/faces/zoom_cam_07.jpg",
@@ -211,7 +211,7 @@
         "face_detected": true,
         "asset_detected": true,
         "asset_label": "Blue Laptop",
-        "clothing_match": "Dark Jacket",
+        "clothing_match": "White Shirt",
         "movement_vector": "Pochampally Crossroad -> Batasingaram"
       },
       "zoomImage": "/faces/zoom_cam_08.jpg",

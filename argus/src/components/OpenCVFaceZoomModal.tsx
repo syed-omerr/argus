@@ -110,7 +110,7 @@ export default function OpenCVFaceZoomModal({
                 </span>
               </div>
               <p className="text-xs text-gray-400 font-mono mt-0.5">
-                Target Profile: Male, approx 5&apos;10&quot; &bull; Dark jacket / top &bull; Carrying blue laptop &bull; VITS Deshmukhi Grid
+                Target Profile: Male, approx 5&apos;10&quot; &bull; White shirt &bull; Carrying blue laptop &bull; VITS Deshmukhi Grid
               </p>
             </div>
           </div>

@@ -132,7 +132,7 @@ function SystemStatus({ isActive }: { isActive: boolean }) {
 export default function Home() {
   const [street, setStreet] = useState("Vignan Institute of Technology and Science, Deshmukhi, Hyderabad");
   const [crimeReport, setCrimeReport] = useState("Unauthorized perimeter breach & laboratory theft");
-  const [suspectNotes, setSuspectNotes] = useState("Male, approx 5'10\", dark jacket, carrying blue laptop");
+  const [suspectNotes, setSuspectNotes] = useState("Male, approx 5'10\", white shirt, carrying blue laptop");
   const [radius, setRadius] = useState(1000);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -477,7 +477,7 @@ export default function Home() {
                 id="suspect-notes"
                 className="argus-textarea"
                 rows={2}
-                placeholder="Male, approx 5'10&quot;, dark jacket, carrying blue laptop…"
+                placeholder="Male, approx 5'10&quot;, white shirt, carrying blue laptop…"
                 value={suspectNotes}
                 onChange={(e) => setSuspectNotes(e.target.value)}
               />
