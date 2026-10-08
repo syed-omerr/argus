@@ -1,0 +1,6 @@
+{
+  "name": "ARGUS - All-Seeing Intelligence System",
+  "description": "Interactive visual portal and global reconnaissance console featuring the Argus eye-opening transition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

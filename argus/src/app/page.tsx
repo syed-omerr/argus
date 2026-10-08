@@ -5,6 +5,7 @@ import { z } from "zod";
 import BusinessMap, { Place } from "../components/BusinessMap";
 import AgentAssignmentModal from "../components/AgentAssignmentModal";
 import OpenCVFaceZoomModal from "../components/OpenCVFaceZoomModal";
+import { ArgusGatewayPortal } from "../components/gateway/ArgusGatewayPortal";
 import { TrajectoryPrediction } from "./api/trajectory-prediction/route";
 
 // ─── Haversine distance ──────────────────────────────────────
@@ -146,6 +147,7 @@ export default function Home() {
   const [showBiometricModal, setShowBiometricModal] = useState(false);
   const [isOpenCvScanning, setIsOpenCvScanning] = useState(false);
   const [openCvStatusText, setOpenCvStatusText] = useState<string | null>(null);
+  const [gatewayUnlocked, setGatewayUnlocked] = useState(false);
 
   const handleRunOpenCvMatcher = async () => {
     try {
@@ -316,6 +318,10 @@ export default function Home() {
   const selectedCount = selectedMarkers.size;
   const detectionCount = places.filter((p) => p.detection).length;
 
+  if (!gatewayUnlocked) {
+    return <ArgusGatewayPortal onEnterTerminal={() => setGatewayUnlocked(true)} />;
+  }
+
   return (
     <main
       className="relative h-screen w-screen overflow-hidden"
@@ -361,7 +367,17 @@ export default function Home() {
             }}
           >
             <ArgusLogo />
-            <SystemStatus isActive={!!center} />
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <button
+                type="button"
+                onClick={() => setGatewayUnlocked(false)}
+                className="px-2 py-0.5 text-[11px] font-mono rounded border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
+                title="Return to Panopticon Eye Gateway"
+              >
+                <span>👁 Gateway</span>
+              </button>
+              <SystemStatus isActive={!!center} />
+            </div>
           </div>
 
           {/* Incident summary chips */}
